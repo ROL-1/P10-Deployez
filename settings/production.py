@@ -15,11 +15,15 @@ DATABASES = {
     }
 }
 
-
+import logging
 import sentry_sdk
 from sentry_sdk import set_level
 from sentry_sdk.integrations.django import DjangoIntegration
-
+from sentry_sdk.integrations.logging import LoggingIntegration
+sentry_logging = LoggingIntegration(
+    level=logging.INFO,        
+    event_level=logging.INFO
+)
 set_level("info")
 
 sentry_sdk.init(
