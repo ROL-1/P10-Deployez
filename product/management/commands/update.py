@@ -4,7 +4,7 @@
 
 # loggings (for Sentry)
 import logging
-import setLevel
+
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
