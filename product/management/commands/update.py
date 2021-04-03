@@ -4,8 +4,9 @@
 
 # loggings (for Sentry)
 import logging
+import setLevel
 logger = logging.getLogger(__name__)
-
+logger.setLevel(logging.INFO)
 
 from django.core.management.base import BaseCommand
 
