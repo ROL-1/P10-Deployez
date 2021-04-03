@@ -17,15 +17,10 @@ DATABASES = {
 
 
 import sentry_sdk
-import logging
+from sentry_sdk import set_level
 from sentry_sdk.integrations.django import DjangoIntegration
-from sentry_sdk.integrations.logging import LoggingIntegration
 
-sentry_logging = LoggingIntegration(
-    level=logging.INFO,        # Capture info and above as breadcrumbs
-    event_level=logging.INFO  # Send info as events
-)
-
+set_level("info")
 
 sentry_sdk.init(
     dsn="https://04ef3937c89c464c9447bdec16877d53@o559490.ingest.sentry.io/5695055",
